@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Home | Ship</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/sidebar.css">
+
+	<!-- Fancybox CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+    
+    <script language="JavaScript">
+		function change(url) {
+			<!--$('#pagecontent').load('../Forms/inventory_report.jsp');-->
+
+
+			var parent = document.getElementById('page-content-wrapper');
+			var line = document.createElement("iframe");
+			line.setAttribute('id', 'documentviewer');
+			line.setAttribute('src', url);
+
+			parent.appendChild(line);
+			return true;
+		}
+
+		function newPopup(url)
+		{
+			popupWindow = window.open(
+			url,'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+
+        function newWindow(url)
+        {
+            var win = window.open(url, '_blank');
+            if(win){
+                //Browser has allowed it to be opened
+                win.focus();
+            }else{
+                //Broswer has blocked it
+                alert('Please allow popups for this site');
+            }
+        }
+	</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		
+		<div class="container-fluid">
+
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="#menu-toggle" id="menu-toggle">
+						<span class="glyphicon glyphicon-align-justify"></span> Menu
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+            <ul class="sidebar-nav">
+
+                <li class="dropdown sidebar-brand" id="accordion">
+
+                	<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Reports <span class="caret" style="transform: rotate(180deg)"></span></a>
+
+                	<ul id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                		<li>
+							<a href="JavaScript:newWindow('../Forms/inventory_report.jsp');">Inventory at Store</a>
+ 						</li>
+
+
+ 						<li>
+							<a href="JavaScript:newWindow('../Forms/ship_parts_report.jsp');">Shipping to Fleet</a>
+ 						</li>
+
+ 						<li>
+							<a href="JavaScript:newWindow('../Forms/daily_ship_rcv_report.jsp');">Shipping Daily Report</a>
+ 						</li>
+
+ 						<li>
+							<a href="JavaScript:newWindow('../Forms/tracking_waybill_report.jsp');">Track Shipping Report</a>
+ 						</li>
+ 						<li><a href="JavaScript:newWindow('../Forms/rma_in_out_cust_report.jsp');">Customer RMA</a></li>
+ 						<li>
+							<a href="JavaScript:newWindow('../Forms/rma_in_out_vendor_report.jsp');">Vendor RMA</a>
+ 						</li>
+
+ 						<!--
+
+ 									<li>
+ 										<a href="JavaScript:newWindow('../Forms/ship_rcv_parts_report.jsp');">Test shipAll-rcvRma-parts</a>
+ 									</li>
+ 						-->
+
+ 						<li>
+							<a href="JavaScript:newWindow('../Forms/parts_net_flow_report.jsp');">Parts Net Flow</a>
+ 						</li>
+                	</ul>
+                </li>
+
+                <li class="dropdown sidebar-brand" id="accordion">
+
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Videos <span class="caret"></span>
+                    </a>
+
+                    <ul id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    	
+		                <li>
+		                	<a href="//www.youtube.com/embed/fk24PuBUUkQ?autoplay=1" class="fancybox fancybox.iframe">
+					  			How to Move Items
+					  		</a>
+		                </li>
+                        <li><a href="#">How to do a Customer RMA</a></li>
+                        <li><a href="#">How to Check Inventory</a></li>
+                        <li><a href="#">How to do a Vendor RMA</a></li>
+                        <li><a href="#">How to add new Customers</a></li>
+                        <li><a href="#">How to add new Vendors</a></li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Ship New Order
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Ship Customer RMA
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Ship Vendor RMA
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Receive Purchase
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Receive Customer RMA
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//www.youtube.com/embed/Obtv8mCCalU?autoplay=1" class="fancybox fancybox.iframe">
+                                How to Receive Vendor RMA
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown sidebar-brand" id="accordion">
+
+                    <a href="#collapseThree" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseThree">Stores <span class="caret"></span></a>
+
+                    <ul id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <li><a href="stores/new_customer_store.html">New Customer Store</a></li>
+                        <li><a href="stores/new_inventory_store.html">New Inventory Store</a></li>
+                        <li><a href="stores/new_vendor_store.html">New Vendor Store</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown sidebar-brand" id="accordion">
+
+                    <a href="#collapseFour" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseFour">Maps <span class="caret"></span></a>
+
+                    <ul id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <li><a href="maps/low_inventory.html">Low Inventory</a></li>
+                        <li><a href="maps/customers.html">Customers</a></li>
+                        <li><a href="maps/vendor.html">Vendor</a></li>
+                        <li><a href="maps/inventory.html">Inventory</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- end ul.sidebar-nav -->
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="assets/images/cruise-ship.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+	</div>
+	
+	<script src="assets/js/jquery-2.1.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <!-- Fancybox JS -->
+    <script src="assets/js/jquery.fancybox.js" type="text/javascript"></script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox({
+                'transitionIn' : 'elastic',
+                'transitionOut' : 'elastic',
+                'width' : '70%',
+                'height' : '70%',						
+                helpers :  {   
+                    media: {}
+                }
+            });
+            
+            $('a[href=#collapseOne]').click(function() {
+            	if ($('#collapseOne').attr('class') == 'panel-collapse collapse in') {
+            		$(this).html("Reports <span class='caret' style='transform: rotate(0deg)'></span>");
+            	} else {
+            		$(this).html("Reports <span class='caret' style='transform: rotate(180deg)'></span>");
+            	}
+            });
+            
+            $('a[href=#collapseTwo]').click(function() {
+            	if ($('#collapseTwo').attr('class') == 'panel-collapse collapse in') {
+            		$(this).html("Videos <span class='caret' style='transform: rotate(0deg)'></span>");
+            	} else {
+            		$(this).html("Videos <span class='caret' style='transform: rotate(180deg)'></span>");
+            	}
+            });
+
+            $('a[href=#collapseThree]').click(function() {
+                if ($('#collapseThree').attr('class') == 'panel-collapse collapse in') {
+                    $(this).html("Stores <span class='caret' style='transform: rotate(0deg)'></span>");
+                } else {
+                    $(this).html("Stores <span class='caret' style='transform: rotate(180deg)'></span>");
+                }
+            });
+
+            $('a[href=#collapseFour]').click(function() {
+                if ($('#collapseFour').attr('class') == 'panel-collapse collapse in') {
+                    $(this).html("Maps <span class='caret' style='transform: rotate(0deg)'></span>");
+                } else {
+                    $(this).html("Maps <span class='caret' style='transform: rotate(180deg)'></span>");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
